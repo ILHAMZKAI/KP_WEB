@@ -8,7 +8,7 @@
 
 ## HOW TO INSTALL
 
-`npm i`
+`npm install`
 
 `npm install framer-motion`
 
