@@ -40,7 +40,7 @@ export const Home = ({ setSectionInView }) => {
       </video>
 
       <motion.div
-        className="max-w-4xl text-center lg:text-left bg-black bg-opacity-50 p-5 rounded-md"
+        className="max-w-6xl text-center lg:text-left bg-black bg-opacity-50 p-5 rounded-md"
         variants={contentVariants}
         initial="hidden"
         animate="visible"
