@@ -6,6 +6,9 @@ import image2 from "../../assets/images/image-2.jpg";
 import image3 from "../../assets/images/image-3.jpg";
 import image4 from "../../assets/images/image-4.jpg";
 import image5 from "../../assets/images/image-5.jpg";
+import image6 from "../../assets/images/image-6.jpg";
+import image7 from "../../assets/images/image-7.jpg";
+import image8 from "../../assets/images/image-8.jpg";
 
 const fasilitas = [
   {
@@ -29,9 +32,24 @@ const fasilitas = [
     image: image4,
   },
   {
+    name: "Sewa Tenda dan Alat Camping",
+    desc: "Tersedia layanan sewa tenda dan perlengkapan camping untuk pengunjung yang ingin bermalam tanpa membawa peralatan sendiri.",
+    image: image5,
+  },
+  {
     name: "Parkir Luas",
     desc: "Area parkir yang luas dan mudah diakses kendaraan roda dua maupun empat.",
-    image: image5,
+    image: image6,
+  },
+  {
+    name: "Villa Bukit Kebo",
+    desc: "Villa nyaman dengan 1-2 kamar, cocok untuk menginap dengan fasilitas seperti AC, tempat tidur, dapur + peralatan, dispenser. Harga mulai dari Rp750.000 (Weekdays).",
+    image: image7,
+  },
+  {
+    name: "Kamar Kecil Umum",
+    desc: "Tersedia kamar kecil bersih dan terawat untuk kenyamanan pengunjung selama berwisata di Bukit Kebo.",
+    image: image8,
   },
 ];
 

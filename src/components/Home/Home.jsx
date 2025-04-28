@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import bukit_kebo_video from "../../assets/videos/home-video.mp4";
+import home_video from "../../assets/videos/home-video.mp4";
 import { useInView } from "react-intersection-observer";
 
 export const Home = ({ setSectionInView }) => {
@@ -36,7 +36,7 @@ export const Home = ({ setSectionInView }) => {
         id="HomeVideo"
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       >
-        <source src={bukit_kebo_video} type="video/mp4" />
+        <source src={home_video} type="video/mp4" />
       </video>
 
       <motion.div
