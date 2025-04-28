@@ -72,19 +72,21 @@ const FeaturedFacilities = ({ setSectionInView }) => {
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {fasilitas.map((item, index) => (
-          <div key={index} className="card card-compact bg-base-100 shadow-xl">
-            <figure className="max-h-40 lg:max-h-48 xl:max-h-52 h-full relative">
-              <img
-                className="h-full w-full object-cover"
-                src={item.image}
-                alt={item.name}
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title text-accent lg:text-2xl">{item.name}</h2>
-              <p>{item.desc}</p>
+          <div key={index} className="card card-compact bg-base-100 shadow-xl rounded-xl overflow-hidden">
+          <figure className="relative h-60">
+            <img
+              className="w-full h-full object-cover image-zoom"
+              src={item.image}
+              alt={item.name}
+              style={{ filter: "brightness(80%)" }}
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 duration-300 hover:scale-105">
+              <h2 className="text-white text-xl font-bold mb-1 drop-shadow">{item.name}</h2>
+              <p className="text-white text-sm drop-shadow line-clamp-2">{item.desc}</p>
             </div>
-          </div>
+          </figure>
+        </div>
+        
         ))}
       </div>
     </section>

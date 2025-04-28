@@ -17,20 +17,10 @@
   }
 }
 
-.reviews {
-  background: url("./assets//images/reviews-img.jpg"),
-    linear-gradient(#0098a1, #0098a1) no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
+.image-zoom {
+  transition: transform 0.3s ease-in-out;
 }
 
-.newsletter {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets//images/newsletter-img.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
+.image-zoom:hover {
+  transform: scale(1.10);
 }
