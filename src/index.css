@@ -32,6 +32,15 @@
   transform: scale(1.10);
 }
 
+.abouts{
+  background: url("./assets//images/abouts-img.jpg"),
+    linear-gradient(#0098a1, #0098a1) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+
 .reviews {
   background: url("./assets//images/reviews-img.jpg"),
     linear-gradient(#0098a1, #0098a1) no-repeat;

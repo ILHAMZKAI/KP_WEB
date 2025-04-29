@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { motion, AnimatePresence } from "framer-motion";
 
 import image1 from "../../assets/images/image-1.jpg";
 import image2 from "../../assets/images/image-2.jpg";
@@ -53,9 +54,23 @@ const fasilitas = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.20,
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const FeaturedFacilities = ({ setSectionInView }) => {
   const { ref, inView } = useInView({
     threshold: 0.2,
+    triggerOnce: true,
   });
 
   useEffect(() => {
@@ -65,28 +80,34 @@ const FeaturedFacilities = ({ setSectionInView }) => {
   }, [inView, setSectionInView]);
 
   return (
-    <section ref={ref} className="" id="feature">
+    <section ref={ref} className="py-10" id="feature">
       <h1 className="uppercase text-center font-bold text-3xl pb-10">
         <span className="text-accent">f</span>asilitas{" "}
         <span className="text-accent">b</span>ukit kebo
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {fasilitas.map((item, index) => (
-          <div key={index} className="card card-compact bg-base-100 shadow-xl rounded-xl overflow-hidden">
-          <figure className="relative h-60">
-            <img
-              className="w-full h-full object-cover image-zoom"
-              src={item.image}
-              alt={item.name}
-              style={{ filter: "brightness(80%)" }}
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 duration-300 hover:scale-105">
-              <h2 className="text-white text-xl font-bold mb-1 drop-shadow">{item.name}</h2>
-              <p className="text-white text-sm drop-shadow line-clamp-2">{item.desc}</p>
-            </div>
-          </figure>
-        </div>
-        
+          <motion.div
+            key={index}
+            className="card card-compact bg-base-100 shadow-xl rounded-xl overflow-hidden"
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            <figure className="relative h-60">
+              <img
+                className="w-full h-full object-cover image-zoom"
+                src={item.image}
+                alt={item.name}
+                style={{ filter: "brightness(80%)" }}
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 duration-300 hover:scale-105">
+                <h2 className="text-white text-xl font-bold mb-1 drop-shadow">{item.name}</h2>
+                <p className="text-white text-sm drop-shadow line-clamp-2">{item.desc}</p>
+              </div>
+            </figure>
+          </motion.div>
         ))}
       </div>
     </section>
