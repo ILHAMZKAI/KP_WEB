@@ -83,7 +83,8 @@ const FeaturedFacilities = ({ setSectionInView }) => {
     <section ref={ref} className="py-10" id="feature">
       <h1 className="uppercase text-center font-bold text-3xl pb-10">
         <span className="text-accent">f</span>asilitas{" "}
-        <span className="text-accent">b</span>ukit kebo
+        <span className="text-accent">b</span>ukit{" "}
+        <span className="text-accent">k</span>ebo
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {fasilitas.map((item, index) => (
