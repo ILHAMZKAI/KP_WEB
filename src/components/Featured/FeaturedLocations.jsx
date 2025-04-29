@@ -65,7 +65,7 @@ const FeaturedFacilities = ({ setSectionInView }) => {
   }, [inView, setSectionInView]);
 
   return (
-    <section ref={ref} className="bg-base-200" id="feature">
+    <section ref={ref} className="" id="feature">
       <h1 className="uppercase text-center font-bold text-3xl pb-10">
         <span className="text-accent">f</span>asilitas{" "}
         <span className="text-accent">b</span>ukit kebo
