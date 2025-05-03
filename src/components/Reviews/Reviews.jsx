@@ -1,60 +1,68 @@
 import React, { useEffect } from "react";
-
 import author_1_img from "../../assets/images/pic-2.png";
 import author_2_img from "../../assets/images/pic-3.png";
 import author_3_img from "../../assets/images/pic-4.png";
+import googleImg from "../../assets/images/google-img.png"; // Mengimpor gambar lokal
 import { useInView } from "react-intersection-observer";
 
+// Data review 
 const reviews = [
   {
-    author_name: "Patricia Lebsack",
+    author_name: "Maisa Qonitha Nuzband",
     author_img: author_1_img,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ex labore odio fuga doloremque sequi in asperiores ea, nisi ullam?",
-    rate: 4,
+    text: "INDAH SEKALIIII. Saya lebih menyarankan datang pagi, karena masih dingin dan sepi. Tapi kalau datang pagi harus bersabar dengan rumput yang masih basah. Saya sarankan datang sebelum sunrise. Wc ada, musholla ada, gazebo sekarang ada penyewaan, camping bisa. Keren",
+    rate: 5,
+    author_url: "https://www.google.com/maps/contrib/112386317565897914233/reviews?hl=id", // Link Google 
   },
   {
-    author_name: "Ervin Howell",
+    author_name: "Kuswandi Arifin",
     author_img: author_2_img,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ex labore odio fuga doloremque sequi in asperiores ea, nisi ullam?",
-    rate: 3,
+    text: "Gunakan saja google map untuk mencari tempat ini. Cukup lumayan jauh dari poros jalan, tapi akses jalan masuk bagus banget karena dekat dengan jalan tol balsam. Tempat asik sekali. Biaya masuk 10rb per orang. Hehe, emang ada kebo nya ternyata..wkwk",
+    rate: 5,
+    author_url: "https://www.google.com/maps/contrib/113525657242906341978/reviews?hl=id", // Link Google 
   },
   {
-    author_name: "Dennis Schulist",
+    author_name: "Rafika Fitri",
     author_img: author_3_img,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ex labore odio fuga doloremque sequi in asperiores ea, nisi ullam?",
+    text: "Ramah anak dan seru mengajak keluarga, kalo kesini syaa jangan pas habis hujan karena pasti sangat becek. Tersedia musholla dan toilet, tiket masuk dewasa 10.000 dan anak 5.000 tersedia gazebo (sepertinya sewa tapi ga tau berapa, dan ada villa nya juga.. Rekomendasi untuk bersantai bersama keluarga",
     rate: 4,
+    author_url: "https://www.google.com/maps/contrib/102965388876549632063/reviews?hl=id", // Link Google 
   },
 ];
 
 export const Reviews = ({ setSectionInView }) => {
   const { ref, inView } = useInView({
-    /* Optional options */
     threshold: 0.2,
   });
+
   useEffect(() => {
     if (inView) {
       setSectionInView("reviews");
     }
   }, [inView]);
+
   return (
-    <section ref={ref} id="reviews" className="relative reviews ">
-      <h1 className="uppercase text-center font-bold text-3xl pb-20">
+    <section ref={ref} id="reviews" className="relative reviews py-20 bg-gray-50">
+      <h1 className="uppercase text-center font-bold text-3xl text-accent pb-20">
         <span className="text-warning">r</span>eviews
       </h1>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-10">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {reviews.map((review, index) => (
-          <div key={index} className="card bg-base-100 shadow-xl">
-            <div className="avatar flex items-center justify-center -mt-10">
-              <div className="w-24 rounded-full">
-                <img src={review.author_img} />
+          <div
+            key={index}
+            className="card bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            <div className="avatar flex justify-center mt-[-3rem]">
+              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-accent">
+                <img src={review.author_img} alt={review.author_name} className="object-cover w-full h-full" />
               </div>
             </div>
-            <div className="card-body">
-              <h2 className="card-title text-accent justify-center">
+            <div className="card-body p-6">
+              <h2 className="card-title text-center text-xl font-semibold text-accent mb-3">
                 {review.author_name}
               </h2>
-              <p className="text-center">{review.text}</p>
-              <div className="card-actions justify-center">
+              <p className="text-gray-700 text-sm text-center mb-4">{review.text}</p>
+              <div className="card-actions flex justify-center items-center space-x-1">
                 {[1, 2, 3, 4, 5].map((_, index) => (
                   <svg
                     key={index}
@@ -62,11 +70,7 @@ export const Reviews = ({ setSectionInView }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className={`w-4 h-4 ${
-                      index < review.rate
-                        ? "fill-orange-500"
-                        : "fill-transparent"
-                    }  stroke-orange-500 `}
+                    className={`w-5 h-5 ${index < review.rate ? "fill-yellow-400" : "fill-transparent"} stroke-yellow-400`}
                   >
                     <path
                       strokeLinecap="round"
@@ -75,6 +79,17 @@ export const Reviews = ({ setSectionInView }) => {
                     />
                   </svg>
                 ))}
+              </div>
+              {/* Add Google logo with link */}
+              <div className="text-center mt-4">
+                <a href={review.author_url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-blue-500 hover:underline">
+                  <img
+                    src={googleImg} 
+                    alt="Google Logo"
+                    className="w-5 h-5 mr-2" 
+                  />
+                  Posted on Google
+                </a>
               </div>
             </div>
           </div>
