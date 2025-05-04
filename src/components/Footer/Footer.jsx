@@ -3,11 +3,9 @@ import React from "react";
 export const Footer = () => {
   return (
     <footer className="footer items-center p-5 bg-neutral text-neutral-content">
-      <div className="items-center grid-flow-col">
-        <p className="sm:text-sm md:text-base lg:text-lg">
-          created by{" "}
-          <span className="font-bold text-accent ">Arian Hajiaghaei</span> |
-          Copyright © 2023 - All right reserved
+      <div className="flex justify-center w-full">
+        <p className="text-center sm:text-sm md:text-base lg:text-lg">
+          Copyright © 2023 - All rights reserved
         </p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
@@ -48,3 +46,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

@@ -1,33 +1,40 @@
 import React, { useEffect } from "react";
-import mapImage from "../../assets/images/map.jpg";
 import { useInView } from "react-intersection-observer";
+
 const Contact = ({ setSectionInView }) => {
   const { ref, inView } = useInView({
-    /* Optional options */
     threshold: 0.2,
   });
+
   useEffect(() => {
     if (inView) {
       setSectionInView("contact");
     }
   }, [inView]);
+
   return (
-    <section ref={ref} id="contact">
-      <h1 className="uppercase text-center font-bold text-3xl pb-20">
-        <span className="text-accent">c</span>ontact{" "}
-        <span className="text-accent">u</span>s
+    <section ref={ref} id="contact" className="py-20 bg-gray-50">
+      <h1 className="uppercase text-center font-bold text-3xl pb-20 text-accent">
+        <span className="text-warning">c</span>ontact{" "}
+        <span className="text-warning">u</span>s
       </h1>
 
-      <div className="grid gap-5 lg:gap-10 lg:grid-cols-3 ">
-        {/* map image */}
-        <div className="lg:col-span-3 flex items-center justify-center ">
-          <img
-            className="w-full max-w-2xl xl:max-w-4xl rounded-md"
-            src={mapImage}
-            alt="map-Image"
-          />
+      <div className="grid gap-5 lg:gap-10 lg:grid-cols-3">
+        {/* Google Maps */}
+        <div className="lg:col-span-3 flex justify-center">
+          <iframe
+            width="100%"
+            height="450"
+            frameBorder="0"
+            style={{ border: 0 }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.949370008243!2d116.9314673!3d-1.1958217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df14f18a4761d75%3A0x296da5398c550e11!2sBukit%20Kebo%20Km%208!5e0!3m2!1sid!2sid!4v1746377783662!5m2!1sid!2sid"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-        {/* website details */}
+
+        {/* Contact Information */}
         <div className="flex flex-col justify-center lg:col-span-1">
           <ul>
             <li className="flex items-center">
@@ -47,9 +54,9 @@ const Contact = ({ setSectionInView }) => {
               </svg>
               <span className="font-bold">address</span>
             </li>
-            <li>Tehran ,</li>
-            <li>Daryan No , </li>
-            <li>400104</li>
+            <li>Bukit Kebo Km 8</li>
+            <li>Tembus TPA Manggar,</li>
+            <li>Balikpapan, Kalimantan Timur</li>
           </ul>
           <ul className="my-5">
             <li className="flex items-center">
@@ -68,7 +75,7 @@ const Contact = ({ setSectionInView }) => {
               </svg>
               <span className="font-bold">e-mail</span>
             </li>
-            <li>xyz@gmail.com</li>
+            <li>bukitkebobalikpapan@gmail.com</li>
           </ul>
 
           <ul>
@@ -88,10 +95,11 @@ const Contact = ({ setSectionInView }) => {
               </svg>
               <span className="font-bold">phone</span>
             </li>
-            <li>+123 4567 890</li>
+            <li>082148837192</li>
           </ul>
         </div>
-        {/* contact form */}
+
+        {/* Contact Form */}
         <div className="lg:col-span-2">
           <h3 className="uppercase font-bold text-3xl pb-5 text-accent">
             get in touch
