@@ -1,134 +1,94 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
+// import gambar
+import iconAddress from "../../assets/images/location-pin.png";
+import iconEmail from "../../assets/images/gmail.png";
+import iconPhone from "../../assets/images/whatsapp.png";
+import iconInstagram from "../../assets/images/instagram.png";
+
 const Contact = ({ setSectionInView }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-  });
+  const { ref, inView } = useInView({ threshold: 0.2 });
 
   useEffect(() => {
-    if (inView) {
-      setSectionInView("contact");
-    }
+    if (inView) setSectionInView("contact");
   }, [inView]);
 
   return (
-    <section ref={ref} id="contact" className="py-20 bg-gray-50">
-      <h1 className="uppercase text-center font-bold text-3xl pb-20 text-accent">
-        <span className="text-warning">c</span>ontact{" "}
-        <span className="text-warning">u</span>s
+    <section ref={ref} id="contact" className="py-20 px-6 bg-gray-50">
+      <h1 className="uppercase text-center font-bold text-3xl pb-20 text-green-700">
+        contact us
       </h1>
 
-      <div className="grid gap-5 lg:gap-10 lg:grid-cols-3">
-        {/* Google Maps */}
-        <div className="lg:col-span-3 flex justify-center">
-          <iframe
-            width="100%"
-            height="450"
-            frameBorder="0"
-            style={{ border: 0 }}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.949370008243!2d116.9314673!3d-1.1958217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df14f18a4761d75%3A0x296da5398c550e11!2sBukit%20Kebo%20Km%208!5e0!3m2!1sid!2sid!4v1746377783662!5m2!1sid!2sid"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+      {/* MAP */}
+      <div className="flex justify-center mb-10">
+        <iframe
+          width="100%"
+          height="450"
+          className="rounded-md max-w-7xl"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.949370008243!2d116.9314673!3d-1.1958217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df14f18a4761d75%3A0x296da5398c550e11!2sBukit%20Kebo%20Km%208!5e0!3m2!1sid!2sid!4v1746377783662!5m2!1sid!2sid"
+        ></iframe>
+      </div>
+
+      {/* CONTACT CARDS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {/* ADDRESS */}
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <img
+            src={iconAddress}
+            alt="address icon"
+            className="w-12 h-12 mx-auto mb-3"
+          />
+          <h3 className="text-xl font-bold text-green-700 mb-2">Alamat</h3>
+          <p>Bukit Kebo Km 8</p>
+          <p>Tembus TPA Manggar</p>
+          <p>Balikpapan, Kalimantan Timur</p>
         </div>
 
-        {/* Contact Information */}
-        <div className="flex flex-col justify-center lg:col-span-1">
-          <ul>
-            <li className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 fill-accent stroke-accent"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                />
-              </svg>
-              <span className="font-bold">address</span>
-            </li>
-            <li>Bukit Kebo Km 8</li>
-            <li>Tembus TPA Manggar,</li>
-            <li>Balikpapan, Kalimantan Timur</li>
-          </ul>
-          <ul className="my-5">
-            <li className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 fill-accent stroke-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                />
-              </svg>
-              <span className="font-bold">e-mail</span>
-            </li>
-            <li>bukitkebobalikpapan@gmail.com</li>
-          </ul>
-
-          <ul>
-            <li className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 fill-accent stroke-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-              <span className="font-bold">phone</span>
-            </li>
-            <li>082148837192</li>
-          </ul>
+        {/* EMAIL */}
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <img
+            src={iconEmail}
+            alt="email icon"
+            className="w-12 h-12 mx-auto mb-3"
+          />
+          <h3 className="text-xl font-bold text-green-700 mb-2">E-mail</h3>
+          <p>bukitkebobalikpapan@gmail.com</p>
         </div>
 
-        {/* Contact Form */}
-        <div className="lg:col-span-2">
-          <h3 className="uppercase font-bold text-3xl pb-5 text-accent">
-            get in touch
-          </h3>
-          <form action="" className="grid grid-rows-3">
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="input input-bordered input-accent w-full  "
-              />
-              <input
-                type="email"
-                placeholder="E-mail"
-                className="input input-bordered input-accent w-full    "
-              />
-            </div>
+        {/* PHONE */}
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <img
+            src={iconPhone}
+            alt="phone icon"
+            className="w-12 h-12 mx-auto mb-3"
+          />
+          <h3 className="text-xl font-bold text-green-700 mb-2">Telepon</h3>
+          <p>0821 4883 7192</p>
+        </div>
 
-            <textarea
-              className="textarea textarea-accent w-full"
-              placeholder="Message"
-            ></textarea>
-            <button
-              type="submit"
-              className="btn btn-outline btn-accent w-full mt-2"
+        {/* INSTAGRAM */}
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <img
+            src={iconInstagram}
+            alt="Instagram icon"
+            className="w-12 h-12 mx-auto mb-3"
+          />
+          <h3 className="text-xl font-bold text-green-700 mb-2">Instagram</h3>
+          <p>
+            <a
+              href="https://instagram.com/bukitkebo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
             >
-              Message
-            </button>
-          </form>
+              @bukitkebo
+            </a>
+          </p>
         </div>
       </div>
     </section>

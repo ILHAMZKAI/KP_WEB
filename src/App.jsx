@@ -16,12 +16,12 @@ function App() {
     <div className="App">
       <Header sectionInView={sectionInView} />
       <Home setSectionInView={setSectionInView} />
+      <Newsletter />
       <FeaturedLocations setSectionInView={setSectionInView} />
       <About setSectionInView={setSectionInView} />
       <Gallery setSectionInView={setSectionInView} />
       <Reviews setSectionInView={setSectionInView} />
       <Contact setSectionInView={setSectionInView} />
-      <Newsletter />
       <Footer />
     </div>
   );

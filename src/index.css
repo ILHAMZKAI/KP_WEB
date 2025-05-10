@@ -20,7 +20,7 @@
 .responsive-img {
   width: 100%;
   height: auto;
-  max-width: 400px; /* contoh maksimal 400px */
+  max-width: 400px; 
 }
 
 
@@ -51,10 +51,12 @@
 }
 
 .newsletter {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets//images/newsletter-img.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("./assets/images/image-1.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-blend-mode: multiply;
 }
+
+
