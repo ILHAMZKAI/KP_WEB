@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import bukitKebo1 from "../../assets/videos/about-video.mp4";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 export const About = ({ setSectionInView }) => {
   const { ref, inView } = useInView({ threshold: 0.2 });
   const videoRef = useRef(null);
-
-  const [headingInView, setHeadingInView] = useState(false);
 
   useEffect(() => {
     if (inView) {
@@ -59,12 +57,8 @@ export const About = ({ setSectionInView }) => {
           <motion.h2
             className="text-3xl lg:text-5xl font-bold uppercase text-white mb-6"
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            onViewportEnter={() => {
-              if (!headingInView) setHeadingInView(true);
-            }}
           >
             Mengapa Memilih Bukit Kebo?
           </motion.h2>
@@ -72,7 +66,7 @@ export const About = ({ setSectionInView }) => {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={headingInView ? "visible" : "hidden"}
+            animate={inView ? "visible" : "hidden"}
           >
             <motion.p className="my-3 lg:text-left lg:text-lg leading-relaxed text-white" variants={itemVariants}>
               Bukit Kebo adalah destinasi wisata alam yang sangat populer di Balikpapan,

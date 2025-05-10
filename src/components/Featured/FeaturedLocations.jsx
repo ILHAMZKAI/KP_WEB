@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
+import image0 from "../../assets/images/image-0.jpg";
 import image1 from "../../assets/images/image-1.jpg";
 import image2 from "../../assets/images/image-2.jpg";
 import image3 from "../../assets/images/image-3.jpg";
@@ -12,6 +13,11 @@ import image7 from "../../assets/images/image-7.jpg";
 import image8 from "../../assets/images/image-8.jpg";
 
 const fasilitas = [
+  {
+    name: "Harga Tiket Masuk",
+    desc: "Tiket masuk Bukit Kebo Balikpapan sebesar Rp 5.000 hingga Rp10.000 per orang.",
+    image: image0,
+  },
   {
     name: "Spot Foto Instagramable",
     desc: "Bukit Kebo menawarkan banyak spot foto menarik berlatar hutan dan pemandangan kota Balikpapan.",
@@ -60,7 +66,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.20,
+      delay: i * 0.10,
       duration: 1.5,
       ease: "easeOut",
     },
@@ -70,7 +76,7 @@ const cardVariants = {
 const FeaturedFacilities = ({ setSectionInView }) => {
   const { ref, inView } = useInView({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false,
   });
 
   useEffect(() => {
@@ -87,29 +93,36 @@ const FeaturedFacilities = ({ setSectionInView }) => {
         <span className="text-accent">k</span>ebo
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {fasilitas.map((item, index) => (
-          <motion.div
-            key={index}
-            className="card card-compact bg-base-100 shadow-xl rounded-xl overflow-hidden"
-            custom={index}
-            variants={cardVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <figure className="relative h-60">
-              <img
-                className="w-full h-full object-cover image-zoom"
-                src={item.image}
-                alt={item.name}
-                style={{ filter: "brightness(80%)" }}
-              />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 duration-300 hover:scale-105">
-                <h2 className="text-white text-xl font-bold mb-1 drop-shadow">{item.name}</h2>
-                <p className="text-white text-sm drop-shadow line-clamp-2">{item.desc}</p>
-              </div>
-            </figure>
-          </motion.div>
-        ))}
+        {fasilitas.map((item, index) => {
+          const { ref: cardRef, inView: cardInView } = useInView({
+            threshold: 0.5,
+            triggerOnce: false,
+          });
+          return (
+            <motion.div
+              key={index}
+              ref={cardRef}
+              className="card card-compact bg-base-100 shadow-xl rounded-xl overflow-hidden"
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={cardInView ? "visible" : "hidden"}
+            >
+              <figure className="relative h-60">
+                <img
+                  className="w-full h-full object-cover image-zoom"
+                  src={item.image}
+                  alt={item.name}
+                  style={{ filter: "brightness(80%)" }}
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 duration-300 hover:scale-105">
+                  <h2 className="text-white text-xl font-bold mb-1 drop-shadow">{item.name}</h2>
+                  <p className="text-white text-sm drop-shadow line-clamp-2">{item.desc}</p>
+                </div>
+              </figure>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

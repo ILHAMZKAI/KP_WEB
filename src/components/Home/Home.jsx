@@ -43,7 +43,7 @@ export const Home = ({ setSectionInView }) => {
         className="max-w-6xl text-center lg:text-left bg-black bg-opacity-50 p-5 rounded-md"
         variants={contentVariants}
         initial="hidden"
-        animate="visible"
+        animate={inView ? "visible" : "hidden"}
         custom={0}
       >
         <h2 className="text-4xl lg:text-5xl font-bold uppercase text-white">
@@ -58,7 +58,7 @@ export const Home = ({ setSectionInView }) => {
         <p className="mt-3 text-lg lg:text-xl text-white">
           Lokasi mudah diakses di Jalan Soekarno-Hatta KM 8, cocok untuk keluarga dan pecinta alam yang ingin menikmati suasana asri dan udara segar.
         </p>
-        <p className="mt-3 text-sm text-white/80 italic">
+        {/* <p className="mt-3 text-sm text-white/80 italic">
           Sumber informasi lainnya:
           <ul className="list-disc list-inside mt-1">
             <li>
@@ -102,7 +102,7 @@ export const Home = ({ setSectionInView }) => {
               </a>
             </li>
           </ul>
-        </p>
+        </p> */}
       </motion.div>
     </section>
   );
