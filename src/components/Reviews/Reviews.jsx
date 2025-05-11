@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import author_1_img from "../../assets/images/pic-2.png";
-import author_2_img from "../../assets/images/pic-3.png";
-import author_3_img from "../../assets/images/pic-4.png";
-import googleImg from "../../assets/images/google-img.png"; // Mengimpor gambar lokal
+import author_1_img from "../../assets/images/user.png";
+import author_2_img from "../../assets/images/user.png";
+import author_3_img from "../../assets/images/user.png";
+import googleImg from "../../assets/images/google-img.png"; 
 import { useInView } from "react-intersection-observer";
 
 // Data review 
@@ -43,7 +43,7 @@ export const Reviews = ({ setSectionInView }) => {
 
   return (
     <section ref={ref} id="reviews" className="relative reviews py-20 bg-gray-50">
-      <h1 className="uppercase text-center font-bold text-3xl text-accent pb-20">
+      <h1 className="uppercase text-center font-bold text-3xl text-white pb-20">
         <span className="text-warning">r</span>eviews
       </h1>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -52,16 +52,23 @@ export const Reviews = ({ setSectionInView }) => {
             key={index}
             className="card bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105"
           >
-            <div className="avatar flex justify-center mt-[-3rem]">
-              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-accent">
+            {/* Avatar */}
+            <div className="avatar flex justify-center mt-[-2rem]">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-green-500">
                 <img src={review.author_img} alt={review.author_name} className="object-cover w-full h-full" />
               </div>
             </div>
+
             <div className="card-body p-6">
+              {/* Author Name */}
               <h2 className="card-title text-center text-xl font-semibold text-accent mb-3">
                 {review.author_name}
               </h2>
+
+              {/* Review Text */}
               <p className="text-gray-700 text-sm text-center mb-4">{review.text}</p>
+
+              {/* Rating Stars */}
               <div className="card-actions flex justify-center items-center space-x-1">
                 {[1, 2, 3, 4, 5].map((_, index) => (
                   <svg
@@ -80,13 +87,14 @@ export const Reviews = ({ setSectionInView }) => {
                   </svg>
                 ))}
               </div>
-              {/* Add Google logo with link */}
+
+              {/* Google Logo and Link */}
               <div className="text-center mt-4">
                 <a href={review.author_url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-blue-500 hover:underline">
                   <img
-                    src={googleImg} 
+                    src={googleImg}
                     alt="Google Logo"
-                    className="w-5 h-5 mr-2" 
+                    className="w-5 h-5 mr-2"
                   />
                   Posted on Google
                 </a>
