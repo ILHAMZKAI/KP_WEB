@@ -26,7 +26,7 @@ export const Gallery = ({ setSectionInView }) => {
   return (
     <section ref={ref} id="gallery" className="py-16 px-4 bg-white">
       <h1 className="uppercase text-center font-bold text-3xl pb-10">
-        <span className="text-accent">g</span>allery
+        <span className="text-accent">A</span>lbum
       </h1>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
