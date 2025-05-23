@@ -17,7 +17,7 @@ const Contact = ({ setSectionInView }) => {
   return (
     <section ref={ref} id="contact" className="py-20 px-6 bg-gray-50">
       <h1 className="uppercase text-center font-bold text-3xl pb-20 text-green-700">
-        contact us
+        Kontak
       </h1>
 
       {/* MAP */}

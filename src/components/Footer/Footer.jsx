@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="footer items-center p-5 bg-neutral text-neutral-content flex flex-col md:flex-row justify-between">
       <div className="w-full md:w-auto text-center md:text-left mb-4 md:mb-0">
-        <p className="text-sm md:text-base">Copyright © 2023 - All rights reserved</p>
+        <p className="text-sm md:text-base">© 2023 Bukit Kebo — Jelajahi keindahan alam</p>
       </div>
       <div className="flex space-x-6 justify-center md:justify-end">
         {/* Facebook */}

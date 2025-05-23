@@ -44,7 +44,7 @@ export const Reviews = ({ setSectionInView }) => {
   return (
     <section ref={ref} id="reviews" className="relative reviews py-20 bg-gray-50">
       <h1 className="uppercase text-center font-bold text-3xl text-white pb-20">
-        <span className="text-warning">r</span>eviews
+        <span className="text-warning">T</span>injauan
       </h1>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {reviews.map((review, index) => (
