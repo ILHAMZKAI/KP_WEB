@@ -24,20 +24,20 @@ export const Gallery = ({ setSectionInView }) => {
   }, [inView]);
 
   return (
-    <section ref={ref} id="gallery" className="py-16 px-4 bg-white">
+    <section ref={ref} id="gallery" className="py-10 px-4 bg-white">
       <h1 className="uppercase text-center font-bold text-3xl pb-10">
-        <span className="text-accent">A</span>lbum
+        <span className="text-accent">a</span>lbum
       </h1>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {images.map((img, index) => (
           <div
             key={index}
-            className={`relative rounded-md overflow-hidden group shadow-md transform transition duration-500 ease-in-out 
-              ${inView ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+            className={`relative rounded-md overflow-hidden group shadow-md transform transition duration-1000 ease-in-out 
+              ${inView ? "opacity-100 scale-100" : "opacity-0 scale-110"}`}
           >
             <img
-              className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+              className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
               src={img}
               alt={`gallery ${index}`}
             />

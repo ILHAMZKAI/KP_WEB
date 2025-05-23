@@ -58,51 +58,6 @@ export const Home = ({ setSectionInView }) => {
         <p className="mt-3 text-lg lg:text-xl text-white">
           Lokasi mudah diakses di Jalan Soekarno-Hatta KM 8, cocok untuk keluarga dan pecinta alam yang ingin menikmati suasana asri dan udara segar.
         </p>
-        {/* <p className="mt-3 text-sm text-white/80 italic">
-          Sumber informasi lainnya:
-          <ul className="list-disc list-inside mt-1">
-            <li>
-              <a
-                href="https://kaltimkece.id/warta/balikpapan/berawal-dari-lokasi-syuting-bukit-kebo-di-balikpapan-jadi-lokasi-wisata-andalan-masa-depan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Kaltim Kece - Sejarah dan Wisata Bukit Kebo
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.detik.com/kalimantan/wisata/d-7831039/bukit-kebo-balikpapan-wisata-alam-habitat-kerbau-yang-lagi-hits"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Detik.com – Bukit Kebo, Wisata Alam Habitat Kerbau yang Lagi Hits
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.kompas.tv/video/411814/bukit-kebo-balikpapan-jadi-lokasi-wisata-favorit-warga-di-akhir-pekan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Kompas.com – Liputan Wisata Bukit Kebo
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.tribunnews.com/tag/bukit-kebo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Tribunnews.com – Berita dan Artikel Bukit Kebo
-              </a>
-            </li>
-          </ul>
-        </p> */}
       </motion.div>
     </section>
   );

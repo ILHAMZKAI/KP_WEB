@@ -15,9 +15,9 @@ const Contact = ({ setSectionInView }) => {
   }, [inView]);
 
   return (
-    <section ref={ref} id="contact" className="py-20 px-6 bg-gray-50">
-      <h1 className="uppercase text-center font-bold text-3xl pb-20 text-green-700">
-        Kontak
+    <section ref={ref} id="contact" className="py-10 px-6 bg-gray-50">
+      <h1 className="uppercase text-center font-bold text-3xl pb-10">
+        <span className="text-accent">k</span>ontak
       </h1>
 
       {/* MAP */}
@@ -25,7 +25,7 @@ const Contact = ({ setSectionInView }) => {
         <iframe
           width="100%"
           height="450"
-          className="rounded-md max-w-7xl"
+          className="rounded-md max-w-7xl shadow-xl"
           style={{ border: 0 }}
           loading="lazy"
           allowFullScreen
@@ -37,42 +37,65 @@ const Contact = ({ setSectionInView }) => {
       {/* CONTACT CARDS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {/* ADDRESS */}
-        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <div className="bg-white p-6 rounded-lg text-center" style={{ boxShadow: '0 5px 20px rgba(0,0,0,0.15)' }}>
           <img
             src={iconAddress}
             alt="address icon"
             className="w-12 h-12 mx-auto mb-3"
           />
           <h3 className="text-xl font-bold text-green-700 mb-2">Alamat</h3>
-          <p>Bukit Kebo Km 8</p>
-          <p>Tembus TPA Manggar</p>
-          <p>Balikpapan, Kalimantan Timur</p>
+          <p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Bukit+Kebo+Km+8+Balikpapan+Kalimantan+Timur"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              Bukit Kebo Km 8, Tembus TPA Manggar, Balikpapan, Kalimantan Timur
+            </a>
+          </p>
         </div>
 
         {/* EMAIL */}
-        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <div className="bg-white p-6 rounded-lg text-center" style={{ boxShadow: '0 5px 20px rgba(0,0,0,0.15)' }}>
           <img
             src={iconEmail}
             alt="email icon"
             className="w-12 h-12 mx-auto mb-3"
           />
           <h3 className="text-xl font-bold text-green-700 mb-2">E-mail</h3>
-          <p>bukitkebobalikpapan@gmail.com</p>
+          <p>
+            <a
+              href="mailto:bukitkebobalikpapan@gmail.com"
+              target="_blank"
+              className="text-blue-600 underline"
+            >
+              bukitkebobalikpapan@gmail.com
+            </a>
+          </p>
         </div>
 
         {/* PHONE */}
-        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <div className="bg-white p-6 rounded-lg text-center" style={{ boxShadow: '0 5px 20px rgba(0,0,0,0.15)' }}>
           <img
             src={iconPhone}
             alt="phone icon"
             className="w-12 h-12 mx-auto mb-3"
           />
           <h3 className="text-xl font-bold text-green-700 mb-2">Telepon</h3>
-          <p>0821 4883 7192</p>
+          <p>
+            <a
+              href="https://wa.me/+6282148837192"
+              target="_blank"
+              className="text-blue-600 underline"
+            >
+              0821 4883 7192
+            </a>
+          </p>
         </div>
 
         {/* INSTAGRAM */}
-        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <div className="bg-white p-6 rounded-lg text-center" style={{ boxShadow: '0 5px 20px rgba(0,0,0,0.15)' }}>
           <img
             src={iconInstagram}
             alt="Instagram icon"

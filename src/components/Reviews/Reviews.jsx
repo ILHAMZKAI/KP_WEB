@@ -42,7 +42,7 @@ export const Reviews = ({ setSectionInView }) => {
   }, [inView]);
 
   return (
-    <section ref={ref} id="reviews" className="relative reviews py-20 bg-gray-50">
+    <section ref={ref} id="reviews" className="relative reviews py-10 bg-gray-50">
       <h1 className="uppercase text-center font-bold text-3xl text-white pb-20">
         <span className="text-warning">T</span>injauan
       </h1>
@@ -61,9 +61,7 @@ export const Reviews = ({ setSectionInView }) => {
 
             <div className="card-body p-6">
               {/* Author Name */}
-              <h2 className="card-title text-center text-xl font-semibold text-accent mb-3">
-                {review.author_name}
-              </h2>
+              <h2 className="text-center text-xl font-semibold mb-4">{review.author_name}</h2>
 
               {/* Review Text */}
               <p className="text-gray-700 text-sm text-center mb-4">{review.text}</p>
